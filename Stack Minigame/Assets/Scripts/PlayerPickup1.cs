@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerPickup : MonoBehaviour
@@ -70,12 +72,21 @@ public class PlayerPickup : MonoBehaviour
             return;
         }
 
+        StartCoroutine(ShowPushHint(stack, _carriedIngredient.ingredientName));
         _carriedIngredient.transform.SetParent(stack.transform);
         _carriedIngredient.SetVisible(false);
         _carriedIngredient = null;
 
         Debug.Log($"[PlayerPickup] Pushed ingredient onto stack");
         UpdateInteractionHint();
+    }
+
+    private IEnumerator ShowPushHint(IngredientStack stack, string name)
+    {
+        stack.ShowPushHint($"{name} pushed");
+        yield return new WaitForSeconds(2f);
+        stack.HidePushHint();
+
     }
 
     private void UpdateInteractionHint()
