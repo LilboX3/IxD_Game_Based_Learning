@@ -1,65 +1,105 @@
+using System;
 using UnityEngine;
 
 public class PlayerPickup : MonoBehaviour
 {
-    public Transform carryPoint;
+    [SerializeField] private Transform carryPoint;
 
-    private Ingredient carriedIngredient = null;
-    private Ingredient nearbyIngredient = null;
+    private Ingredient _carriedIngredient;
+    private IngredientStack _nearbyStack;
 
-    void Update()
+    public bool IsCarrying => _carriedIngredient != null;
+
+    public event Action<string> OnInteractionHintChanged;
+
+    private void Update()
     {
-        //pick ingredient up
         if (Input.GetKeyDown(KeyCode.E))
         {
-            if (nearbyIngredient != null && carriedIngredient == null)
+            if (_carriedIngredient == null && _nearbyStack != null && _nearbyStack.CanPop)
             {
-                PickupIngredient(nearbyIngredient);
+                PopFromStack(_nearbyStack);
             }
-        }
-
-        // drop ingredient
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            if (carriedIngredient != null)
+            else if (_carriedIngredient != null && _nearbyStack != null && _nearbyStack.CanPush)
             {
-                DropIngredient();
+                PushToStack(_nearbyStack);
             }
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Ingredient"))
+        if (collision.CompareTag("Stack"))
         {
-            nearbyIngredient = collision.gameObject.GetComponent<Ingredient>();
+            _nearbyStack = collision.GetComponent<IngredientStack>();
+            UpdateInteractionHint();
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Ingredient"))
+        if (collision.CompareTag("Stack") && _nearbyStack != null
+            && collision.gameObject == _nearbyStack.gameObject)
         {
-            nearbyIngredient = null;
+            _nearbyStack.HideHint();
+            _nearbyStack = null;
         }
     }
 
-    void PickupIngredient(Ingredient ingredient)
+    private void PopFromStack(IngredientStack stack)
     {
-        carriedIngredient = ingredient;
+        Ingredient ingredient = stack.Pop();
+        if (ingredient == null)
+        {
+            return;
+        }
 
-        ingredient.transform.position = carryPoint.position;
+        _carriedIngredient = ingredient;
         ingredient.transform.SetParent(carryPoint);
+        ingredient.transform.localPosition = Vector3.zero;
 
-        Debug.Log("Picked up " + ingredient.ingredientName);
+        Debug.Log($"[PlayerPickup] Picked up {ingredient.ingredientName} from stack");
+        UpdateInteractionHint();
     }
 
-    void DropIngredient()
+    private void PushToStack(IngredientStack stack)
     {
-        carriedIngredient.transform.SetParent(null);
+        if (!stack.Push(_carriedIngredient))
+        {
+            return;
+        }
 
-        carriedIngredient = null;
+        _carriedIngredient.transform.SetParent(stack.transform);
+        _carriedIngredient = null;
 
-        Debug.Log("Dropped ingredient");
+        Debug.Log($"[PlayerPickup] Pushed ingredient onto stack");
+        UpdateInteractionHint();
+    }
+
+    private void UpdateInteractionHint()
+    {
+        if (_nearbyStack == null) return;
+
+        if (_carriedIngredient == null && _nearbyStack.CanPop)
+        {
+            _nearbyStack.ShowHint($"[E] Take {_nearbyStack.Peek().ingredientName}");
+        }
+        else if (_carriedIngredient != null && _nearbyStack.CanPush)
+        {
+            _nearbyStack.ShowHint($"[E] Place {_carriedIngredient.ingredientName}");
+        }
+        else if (_carriedIngredient != null && _nearbyStack.IsFull)
+        {
+            _nearbyStack.ShowHint("Stack full");
+        }
+        else if (_carriedIngredient == null && _nearbyStack.IsEmpty
+            && _nearbyStack.Mode == IngredientStack.StackMode.Free)
+        {
+            _nearbyStack.ShowHint("Stack empty");
+        }
+        else
+        {
+            _nearbyStack.HideHint();
+        }
     }
 }

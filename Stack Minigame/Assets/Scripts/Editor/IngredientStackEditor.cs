@@ -23,6 +23,9 @@ public class IngredientStackEditor : Editor
             EditorGUILayout.HelpBox("Max Size is set automatically by ChefRat's Recipe Length.", MessageType.Info);
         }
 
+        EditorGUILayout.PropertyField(serializedObject.FindProperty("hintText"));
+        EditorGUILayout.PropertyField(serializedObject.FindProperty("OnStackChanged"));
+
         serializedObject.ApplyModifiedProperties();
     }
 }

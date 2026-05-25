@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -13,6 +14,9 @@ public class IngredientStack : MonoBehaviour
     [SerializeField] private StackMode mode = StackMode.Free;
     [SerializeField] private int maxSize = 5;
 
+    [Header("Interaction Hint")]
+    [SerializeField] private TextMeshPro hintText;
+
     public bool CanPush => !IsFull;
 
     public bool CanPop => !IsEmpty && mode == StackMode.Free;
@@ -21,6 +25,7 @@ public class IngredientStack : MonoBehaviour
     public bool IsEmpty => _items.Count == 0;
     public bool IsFull => _items.Count >= maxSize;
     public int MaxSize { get => maxSize; set => maxSize = value; }
+    public StackMode Mode => mode;
 
     public UnityEvent OnStackChanged;
 
@@ -46,4 +51,17 @@ public class IngredientStack : MonoBehaviour
     public Ingredient Peek() => IsEmpty ? null : _items[^1];
 
     public IReadOnlyList<Ingredient> GetItems() => _items.AsReadOnly();
+
+    public void ShowHint(string text)
+    {
+        if (hintText == null) return;
+        hintText.text = text;
+        hintText.gameObject.SetActive(true);
+    }
+
+    public void HideHint()
+    {
+        if (hintText == null) return;
+        hintText.gameObject.SetActive(false);
+    }
 }
