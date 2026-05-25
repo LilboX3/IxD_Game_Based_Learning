@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
 
     [Header("References")]
     [SerializeField] private ChefRat chefRat;
+    [SerializeField] private StackInitializer stackInitializer;
 
     [Header("Ingredients")]
     [Tooltip("All ingredient names that can appear in the game.")]
@@ -71,6 +72,7 @@ public class GameManager : MonoBehaviour
         State = GameState.Playing;
 
         chefRat.GenerateRecipe(new List<string>(allIngredientNames));
+        stackInitializer.InitializeStacks(allIngredientNames, chefRat.Recipe);
 
         OnGameStarted?.Invoke();
     }

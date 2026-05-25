@@ -387,6 +387,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 356521479}
   m_CullTransparentMesh: 1
+--- !u!114 &497586593 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 55754317828327366, guid: b4e35d12d7ed71c4e80fc0b57350c2fa, type: 3}
+  m_PrefabInstance: {fileID: 6943548101461265633}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2ae63537d518fa4186f74cf509a10ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &600947113
 GameObject:
   m_ObjectHideFlags: 0
@@ -397,6 +408,7 @@ GameObject:
   m_Component:
   - component: {fileID: 600947114}
   - component: {fileID: 600947115}
+  - component: {fileID: 600947116}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -433,10 +445,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameDuration: 60
   chefRat: {fileID: 669069430}
+  stackInitializer: {fileID: 600947116}
   allIngredientNames:
   - Sugar
   - Spice
   - Everything nice
+--- !u!114 &600947116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 600947113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c07c0348f073ed49aded36efab70fa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sourceStacks:
+  - {fileID: 1553650556609101532}
+  deliveryStack: {fileID: 497586593}
+  ingredientPrefab: {fileID: 7755338279106036942, guid: 27b5ef4ad670f4242813b068128e5397, type: 3}
+  stackFillChance: 0.7
+  minFillCount: 1
+  maxFillCount: 3
 --- !u!1 &652826950
 GameObject:
   m_ObjectHideFlags: 0
@@ -1772,6 +1804,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82dcc34011779ed47870ccf5015a3409, type: 3}
+--- !u!114 &1553650556609101532 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6229307764319439509, guid: 82dcc34011779ed47870ccf5015a3409, type: 3}
+  m_PrefabInstance: {fileID: 1553650556609101529}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2ae63537d518fa4186f74cf509a10ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6943548101461265633
 PrefabInstance:
   m_ObjectHideFlags: 0
