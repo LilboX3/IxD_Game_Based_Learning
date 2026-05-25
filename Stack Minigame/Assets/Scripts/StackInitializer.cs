@@ -23,27 +23,30 @@ public class StackInitializer : MonoBehaviour
         var shuffledStacks = new List<IngredientStack>(sourceStacks);
         Shuffle(shuffledStacks);
 
-        var requiredTargets = new List<IngredientStack>(shuffledStacks);
-        foreach (string required in requiredIngredients)
+        var shuffledRequired = new List<string>(requiredIngredients);
+        Shuffle(shuffledRequired);
+
+        for (int i = 0; i < shuffledRequired.Count; i++)
         {
-            IngredientStack target;
-            if (requiredTargets.Count > 0)
+            IngredientStack target = null;
+            int startIdx = i % shuffledStacks.Count;
+            for (int attempt = 0; attempt < shuffledStacks.Count; attempt++)
             {
-                target = requiredTargets[0];
-                requiredTargets.RemoveAt(0);
-            }
-            else
-            {
-                target = shuffledStacks.Find(s => !s.IsFull);
+                var candidate = shuffledStacks[(startIdx + attempt) % shuffledStacks.Count];
+                if (!candidate.IsFull)
+                {
+                    target = candidate;
+                    break;
+                }
             }
 
             if (target != null)
             {
-                SpawnIngredient(required, target);
+                SpawnIngredient(shuffledRequired[i], target);
             }
             else
             {
-                Debug.LogWarning($"[StackInitializer] All stacks full — could not place required ingredient '{required}'.");
+                Debug.LogWarning($"[StackInitializer] All stacks full — could not place required ingredient '{shuffledRequired[i]}'.");
             }
         }
 
