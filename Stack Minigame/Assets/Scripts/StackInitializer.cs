@@ -28,6 +28,7 @@ public class StackInitializer : MonoBehaviour
         var shuffledRequired = new List<string>(requiredIngredients);
         Shuffle(shuffledRequired);
 
+        int ingredientOrderIndex = 0;
         for (int i = 0; i < shuffledRequired.Count; i++)
         {
             IngredientStack target = null;
@@ -47,7 +48,7 @@ public class StackInitializer : MonoBehaviour
                 SpawnIngredient(shuffledRequired[i], target);
 
                 target.ShowPushHint(
-                    $"{i + 1}. {shuffledRequired[i]} pushed"
+                    $"{target.Count}. {shuffledRequired[i]} pushed"
                 );
                 yield return new WaitForSeconds(2f);
                 target.HidePushHint();
@@ -77,7 +78,7 @@ public class StackInitializer : MonoBehaviour
                 SpawnIngredient(name, stack);
 
                 stack.ShowPushHint(
-                    $"{i + 1}. {name} pushed"
+                    $"{stack.Count}. {name} pushed"
                 );
                 yield return new WaitForSeconds(2f);
                 stack.HidePushHint();
