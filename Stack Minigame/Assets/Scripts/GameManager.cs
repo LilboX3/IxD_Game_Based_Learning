@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     [Header("References")]
     [SerializeField] private ChefRat chefRat;
     [SerializeField] private StackInitializer stackInitializer;
+    [SerializeField] private SaboteurRat saboteurRat;
 
     [Header("Ingredients")]
     [Tooltip("All ingredient names that can appear in the game.")]
@@ -76,6 +77,7 @@ public class GameManager : MonoBehaviour
 
         chefRat.GenerateRecipe(new List<string>(allIngredientNames));
         StartCoroutine(stackInitializer.InitializeStacks(allIngredientNames, chefRat.Recipe));
+        StartCoroutine(saboteurRat.SabotageLoop(allIngredientNames));
 
         OnGameStarted?.Invoke();
     }
