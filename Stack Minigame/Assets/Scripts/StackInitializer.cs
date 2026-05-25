@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class StackInitializer : MonoBehaviour
 {
@@ -74,6 +75,12 @@ public class StackInitializer : MonoBehaviour
 
                 string name = allIngredients[Random.Range(0, allIngredients.Length)];
                 SpawnIngredient(name, stack);
+
+                stack.ShowPushHint(
+                    $"{i + 1}. {name} pushed"
+                );
+                yield return new WaitForSeconds(2f);
+                stack.HidePushHint();
             }
         }
     }
