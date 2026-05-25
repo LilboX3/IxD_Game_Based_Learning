@@ -2001,18 +2001,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2135614795887349937, guid: 82dcc34011779ed47870ccf5015a3409, type: 3}
-      propertyPath: m_fontSize
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2135614795887349937, guid: 82dcc34011779ed47870ccf5015a3409, type: 3}
-      propertyPath: m_fontSizeBase
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2135614795887349937, guid: 82dcc34011779ed47870ccf5015a3409, type: 3}
-      propertyPath: m_HorizontalAlignment
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 3054515828137762066, guid: 82dcc34011779ed47870ccf5015a3409, type: 3}
       propertyPath: m_Name
       value: Ingredient Stack
@@ -2070,22 +2058,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 183368791594325869, guid: 06be491b4971c96418b6838c796ec9e7, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2402803728766959234, guid: 06be491b4971c96418b6838c796ec9e7, type: 3}
-      propertyPath: m_fontSize
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2402803728766959234, guid: 06be491b4971c96418b6838c796ec9e7, type: 3}
-      propertyPath: m_fontSizeBase
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2402803728766959234, guid: 06be491b4971c96418b6838c796ec9e7, type: 3}
-      propertyPath: m_HorizontalAlignment
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 4200101360983242425, guid: 06be491b4971c96418b6838c796ec9e7, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.05
