@@ -24,6 +24,7 @@ public class IngredientStackEditor : Editor
         }
 
         EditorGUILayout.PropertyField(serializedObject.FindProperty("hintText"));
+        EditorGUILayout.PropertyField(serializedObject.FindProperty("pushText"));
         EditorGUILayout.PropertyField(serializedObject.FindProperty("OnStackChanged"));
 
         serializedObject.ApplyModifiedProperties();

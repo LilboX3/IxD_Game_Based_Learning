@@ -16,6 +16,7 @@ public class IngredientStack : MonoBehaviour
 
     [Header("Interaction Hint")]
     [SerializeField] private TextMeshPro hintText;
+    [SerializeField] private TextMeshPro pushText;
 
     public bool CanPush => !IsFull;
 
@@ -80,6 +81,18 @@ public class IngredientStack : MonoBehaviour
     {
         _showingInteractionHint = false;
         UpdateCountDisplay();
+    }
+
+    public void ShowPushHint(string text)
+    {
+        if (text == null) return;
+        pushText.gameObject.SetActive(true);
+        pushText.text = text;
+    }
+
+    public void HidePushHint()
+    {
+        pushText.gameObject.SetActive(false);
     }
 
     private void UpdateCountDisplay()

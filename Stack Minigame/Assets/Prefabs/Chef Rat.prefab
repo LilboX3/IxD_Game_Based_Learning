@@ -75,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: -1211088889193394867, guid: 26c46840b8aabd54db724e7602e2df20, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -162,7 +162,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: -9144409689926450694, guid: abd8e2f3a974cdd459728a0980742006, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -253,7 +253,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
   m_Color: {r: 0.5660378, g: 0.51441795, b: 0.5537315, a: 1}
   m_FlipX: 0
@@ -290,6 +290,18 @@ PrefabInstance:
     - target: {fileID: 183368791594325869, guid: 06be491b4971c96418b6838c796ec9e7, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 192912522325923821, guid: 06be491b4971c96418b6838c796ec9e7, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2402803728766959234, guid: 06be491b4971c96418b6838c796ec9e7, type: 3}
+      propertyPath: m_fontSize
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2402803728766959234, guid: 06be491b4971c96418b6838c796ec9e7, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4200101360983242425, guid: 06be491b4971c96418b6838c796ec9e7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -331,9 +343,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8263728457651359496, guid: 06be491b4971c96418b6838c796ec9e7, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8757287464740383432, guid: 06be491b4971c96418b6838c796ec9e7, type: 3}
       propertyPath: m_Name
       value: Delivery Stack
+      objectReference: {fileID: 0}
+    - target: {fileID: 8965571584993040284, guid: 06be491b4971c96418b6838c796ec9e7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -1.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

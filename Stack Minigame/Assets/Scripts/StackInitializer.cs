@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -16,7 +17,7 @@ public class StackInitializer : MonoBehaviour
     [SerializeField] private int minFillCount = 1;
     [SerializeField] private int maxFillCount = 3;
 
-    public void InitializeStacks(string[] allIngredients, IReadOnlyList<string> requiredIngredients)
+    public IEnumerator InitializeStacks(string[] allIngredients, IReadOnlyList<string> requiredIngredients)
     {
         ClearAllStacks();
 
@@ -43,6 +44,12 @@ public class StackInitializer : MonoBehaviour
             if (target != null)
             {
                 SpawnIngredient(shuffledRequired[i], target);
+
+                target.ShowPushHint(
+                    $"{i + 1}. {shuffledRequired[i]} pushed"
+                );
+                yield return new WaitForSeconds(2f);
+                target.HidePushHint();
             }
             else
             {

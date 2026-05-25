@@ -75,7 +75,7 @@ public class GameManager : MonoBehaviour
         State = GameState.Playing;
 
         chefRat.GenerateRecipe(new List<string>(allIngredientNames));
-        stackInitializer.InitializeStacks(allIngredientNames, chefRat.Recipe);
+        StartCoroutine(stackInitializer.InitializeStacks(allIngredientNames, chefRat.Recipe));
 
         OnGameStarted?.Invoke();
     }
