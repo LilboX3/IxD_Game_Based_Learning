@@ -1581,6 +1581,12 @@ MonoBehaviour:
   - Sugar
   - Spice
   - Everything nice
+  - Milk
+  - Egg
+  - Salt
+  - Flour
+  - Pepper
+  - Butter
 --- !u!114 &600947116
 MonoBehaviour:
   m_ObjectHideFlags: 0
