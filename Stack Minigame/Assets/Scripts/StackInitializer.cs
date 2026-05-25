@@ -93,6 +93,7 @@ public class StackInitializer : MonoBehaviour
 
         Ingredient ingredient = go.GetComponent<Ingredient>();
         ingredient.ingredientName = ingredientName;
+        ingredient.SetVisible(false);
 
         stack.Push(ingredient);
     }

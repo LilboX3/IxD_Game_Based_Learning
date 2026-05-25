@@ -30,6 +30,22 @@ public class IngredientStack : MonoBehaviour
     public UnityEvent OnStackChanged;
 
     private readonly List<Ingredient> _items = new();
+    private bool _showingInteractionHint = false;
+
+    private void OnEnable()
+    {
+        OnStackChanged.AddListener(UpdateCountDisplay);
+    }
+
+    private void OnDisable()
+    {
+        OnStackChanged.RemoveListener(UpdateCountDisplay);
+    }
+
+    private void Start()
+    {
+        UpdateCountDisplay();
+    }
 
     public bool Push(Ingredient ingredient)
     {
@@ -55,13 +71,21 @@ public class IngredientStack : MonoBehaviour
     public void ShowHint(string text)
     {
         if (hintText == null) return;
+        _showingInteractionHint = true;
         hintText.text = text;
         hintText.gameObject.SetActive(true);
     }
 
     public void HideHint()
     {
-        if (hintText == null) return;
-        hintText.gameObject.SetActive(false);
+        _showingInteractionHint = false;
+        UpdateCountDisplay();
+    }
+
+    private void UpdateCountDisplay()
+    {
+        if (hintText == null || _showingInteractionHint) return;
+        hintText.text = $"{Count}/{MaxSize}";
+        hintText.gameObject.SetActive(true);
     }
 }

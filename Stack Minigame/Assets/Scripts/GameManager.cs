@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
     [Tooltip("All ingredient names that can appear in the game.")]
     [SerializeField] private string[] allIngredientNames;
 
-    public enum GameState { Idle, Playing, Won, Lost }
+    public enum GameState { Idle, Playing, Won, WrongOrder, Lost }
 
     public GameState State { get; private set; } = GameState.Idle;
     public float TimeRemaining { get; private set; }
@@ -40,7 +40,16 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        chefRat.DeliveryStack.OnStackChanged.AddListener(OnDeliveryStackChanged);
         StartGame();
+    }
+
+    private void OnDestroy()
+    {
+        if (chefRat != null && chefRat.DeliveryStack != null)
+        {
+            chefRat.DeliveryStack.OnStackChanged.RemoveListener(OnDeliveryStackChanged);
+        }
     }
 
     private void Update()
@@ -50,19 +59,13 @@ public class GameManager : MonoBehaviour
             return;
         }
 
-        if (chefRat.ValidateDeliveryStack())
-        {
-            EndGame(GameState.Won);
-            return;
-        }
-
         TimeRemaining -= Time.deltaTime;
         OnTimerUpdated?.Invoke(TimeRemaining / gameDuration);
 
         if (TimeRemaining <= 0f)
         {
             TimeRemaining = 0f;
-            EndGame(chefRat.ValidateDeliveryStack() ? GameState.Won : GameState.Lost);
+            EndGame(GameState.Lost);
         }
     }
 
@@ -78,6 +81,14 @@ public class GameManager : MonoBehaviour
     }
 
     public void RestartGame() => StartGame();
+
+    private void OnDeliveryStackChanged()
+    {
+        if (State != GameState.Playing) return;
+        if (!chefRat.DeliveryStack.IsFull) return;
+
+        EndGame(chefRat.ValidateDeliveryStack() ? GameState.Won : GameState.WrongOrder);
+    }
 
     private void EndGame(GameState result)
     {

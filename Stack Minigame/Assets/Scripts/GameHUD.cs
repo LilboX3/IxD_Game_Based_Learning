@@ -67,9 +67,12 @@ public class GameHUD : MonoBehaviour
     private void HandleGameEnded(GameManager.GameState result)
     {
         resultPanel.SetActive(true);
-        resultText.text = result == GameManager.GameState.Won
-            ? "You've won!!!"
-            : "You've lost... :(";
+        resultText.text = result switch
+        {
+            GameManager.GameState.Won        => "Perfect order!",
+            GameManager.GameState.WrongOrder => "Wrong order - try again!",
+            _                                => "Time's up!"
+        };
     }
 
     private void RefreshRecipeDisplay()

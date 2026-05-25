@@ -57,6 +57,7 @@ public class PlayerPickup : MonoBehaviour
         _carriedIngredient = ingredient;
         ingredient.transform.SetParent(carryPoint);
         ingredient.transform.localPosition = Vector3.zero;
+        ingredient.SetVisible(true);
 
         Debug.Log($"[PlayerPickup] Picked up {ingredient.ingredientName} from stack");
         UpdateInteractionHint();
@@ -70,6 +71,7 @@ public class PlayerPickup : MonoBehaviour
         }
 
         _carriedIngredient.transform.SetParent(stack.transform);
+        _carriedIngredient.SetVisible(false);
         _carriedIngredient = null;
 
         Debug.Log($"[PlayerPickup] Pushed ingredient onto stack");
