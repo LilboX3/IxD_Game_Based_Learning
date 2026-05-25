@@ -12,10 +12,14 @@ public class PotStirrer : MonoBehaviour
     [SerializeField]
     private float speed = 4.0f;
 
+    private Vector3 targetPosition;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         transform.position = leftEnd.position;
+        targetPosition = rightEnd.position;
+        StartCoroutine(WaitAndFlipEverySeconds(1f));
     }
 
     // Update is called once per frame
@@ -23,16 +27,19 @@ public class PotStirrer : MonoBehaviour
     {
         if (isBeingStirred)
         {
-            transform.position = Vector3.MoveTowards(transform.position, rightEnd.position, speed * Time.deltaTime);
-            StartCoroutine(WaitSeconds(1f));
-            transform.position = Vector3.MoveTowards(transform.position, leftEnd.position, speed * Time.deltaTime);
-            StartCoroutine(WaitSeconds(1f));
+            transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
         }
     }
 
-    private IEnumerator WaitSeconds(float seconds)
+    private IEnumerator WaitAndFlipEverySeconds(float seconds)
     {
-        yield return new WaitForSeconds(seconds);
+        while (isBeingStirred)
+        {
+            targetPosition = targetPosition == leftEnd.position 
+                ? rightEnd.position 
+                : leftEnd.position;
+            yield return new WaitForSeconds(seconds);
+        }
     }
 
     public void StartStirring()
