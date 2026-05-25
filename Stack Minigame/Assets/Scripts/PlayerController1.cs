@@ -6,9 +6,9 @@ public class PlayerController : MonoBehaviour
     public float jumpForce = 7f;
 
     private Rigidbody2D rb;
-    private bool isGrounded;
 
-    private float moveInput;
+    private float moveInputHorizontal;
+    private float moveInputVertical;
 
     void Start()
     {
@@ -17,33 +17,13 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        moveInput = Input.GetAxisRaw("Horizontal");
-
-        // Jump
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
-        {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
-        }
+        moveInputHorizontal = Input.GetAxisRaw("Horizontal");
+        moveInputVertical = Input.GetAxisRaw("Vertical");
     }
 
     void FixedUpdate()
     {
-        rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
+        rb.linearVelocity = new Vector2(moveInputHorizontal * moveSpeed, moveInputVertical * moveSpeed);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            isGrounded = true;
-        }
-    }
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            isGrounded = false;
-        }
-    }
 }

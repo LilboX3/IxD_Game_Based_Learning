@@ -1,0 +1,585 @@
+fileFormatVersion: 2
+guid: db028ad73170fcb4c9da7fb3000ae720
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5893875217146484102
+    second: New new tile set 64p_0
+  - first:
+      213: -2043635676645851995
+    second: New new tile set 64p_1
+  - first:
+      213: 3557793180735340885
+    second: New new tile set 64p_2
+  - first:
+      213: 420764072907715450
+    second: New new tile set 64p_3
+  - first:
+      213: 6606426273874323310
+    second: New new tile set 64p_4
+  - first:
+      213: -3643845162603842402
+    second: New new tile set 64p_5
+  - first:
+      213: 3088926477820658444
+    second: New new tile set 64p_6
+  - first:
+      213: 2394515826717345401
+    second: New new tile set 64p_7
+  - first:
+      213: 7679609769177912414
+    second: New new tile set 64p_8
+  - first:
+      213: -5763142727170070049
+    second: New new tile set 64p_9
+  - first:
+      213: 6615646632042445211
+    second: New new tile set 64p_10
+  - first:
+      213: 5133082334715921917
+    second: New new tile set 64p_11
+  - first:
+      213: 4196693634991157581
+    second: New new tile set 64p_12
+  - first:
+      213: -5258847388645275186
+    second: New new tile set 64p_13
+  - first:
+      213: -3380158649243216707
+    second: New new tile set 64p_14
+  - first:
+      213: -997011963467909395
+    second: New new tile set 64p_15
+  - first:
+      213: 8976242061408372620
+    second: New new tile set 64p_16
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: New new tile set 64p_0
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 225
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7a618397bfb43ea0800000000000000
+      internalID: -5893875217146484102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: New new tile set 64p_1
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 225
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ac75330e2c83a3e0800000000000000
+      internalID: -2043635676645851995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: New new tile set 64p_2
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 225
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55189024c02df5130800000000000000
+      internalID: 3557793180735340885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: New new tile set 64p_3
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 225
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7339ebe1bad6d500800000000000000
+      internalID: 420764072907715450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: New new tile set 64p_4
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 225
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e67261991bdbeab50800000000000000
+      internalID: 6606426273874323310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: New new tile set 64p_5
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 151
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e94f87a61267e6dc0800000000000000
+      internalID: -3643845162603842402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: New new tile set 64p_6
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 151
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c038cc704421eda20800000000000000
+      internalID: 3088926477820658444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: New new tile set 64p_7
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 151
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 976c98c25770b3120800000000000000
+      internalID: 2394515826717345401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: New new tile set 64p_8
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 151
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5418719564739a60800000000000000
+      internalID: 7679609769177912414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: New new tile set 64p_9
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 151
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd9e62d59343500b0800000000000000
+      internalID: -5763142727170070049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: New new tile set 64p_10
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 77
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9936668f8f7fcb50800000000000000
+      internalID: 6615646632042445211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: New new tile set 64p_11
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 77
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df5439bef2f5c3740800000000000000
+      internalID: 5133082334715921917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: New new tile set 64p_12
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 77
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d417ac040a6ad3a30800000000000000
+      internalID: 4196693634991157581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: New new tile set 64p_13
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 77
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec9cecf9922d407b0800000000000000
+      internalID: -5258847388645275186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: New new tile set 64p_14
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 77
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db4d46b0e934711d0800000000000000
+      internalID: -3380158649243216707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: New new tile set 64p_15
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 3
+        width: 14
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de63ea0d6e6e922f0800000000000000
+      internalID: -997011963467909395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: New new tile set 64p_16
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 3
+        width: 14
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c878a20c894029c70800000000000000
+      internalID: 8976242061408372620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      New new tile set 64p_0: -5893875217146484102
+      New new tile set 64p_1: -2043635676645851995
+      New new tile set 64p_10: 6615646632042445211
+      New new tile set 64p_11: 5133082334715921917
+      New new tile set 64p_12: 4196693634991157581
+      New new tile set 64p_13: -5258847388645275186
+      New new tile set 64p_14: -3380158649243216707
+      New new tile set 64p_15: -997011963467909395
+      New new tile set 64p_16: 8976242061408372620
+      New new tile set 64p_2: 3557793180735340885
+      New new tile set 64p_3: 420764072907715450
+      New new tile set 64p_4: 6606426273874323310
+      New new tile set 64p_5: -3643845162603842402
+      New new tile set 64p_6: 3088926477820658444
+      New new tile set 64p_7: 2394515826717345401
+      New new tile set 64p_8: 7679609769177912414
+      New new tile set 64p_9: -5763142727170070049
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
