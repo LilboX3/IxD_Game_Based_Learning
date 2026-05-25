@@ -95,11 +95,11 @@ public class PlayerPickup : MonoBehaviour
 
         if (_carriedIngredient == null && _nearbyStack.CanPop)
         {
-            _nearbyStack.ShowHint($"[E] Take {_nearbyStack.Peek().ingredientName}");
+            _nearbyStack.ShowHint($"[E] Pop {_nearbyStack.Peek().ingredientName}");
         }
         else if (_carriedIngredient != null && _nearbyStack.CanPush)
         {
-            _nearbyStack.ShowHint($"[E] Place {_carriedIngredient.ingredientName}");
+            _nearbyStack.ShowHint($"[E] Push {_carriedIngredient.ingredientName}");
         }
         else if (_carriedIngredient != null && _nearbyStack.IsFull)
         {
