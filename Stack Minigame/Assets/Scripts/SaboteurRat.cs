@@ -38,8 +38,7 @@ public class SaboteurRat : MonoBehaviour
 
         if (targetStack.IsFull)
         {
-            //return;
-            targetStack = sourceStacks[1];
+            return;
         }
 
         string ingredient =
