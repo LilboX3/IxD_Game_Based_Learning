@@ -71,6 +71,7 @@ public class GameHUD : MonoBehaviour
         {
             GameManager.GameState.Won        => "Perfect order!",
             GameManager.GameState.WrongOrder => "Wrong order - try again!",
+            GameManager.GameState.Overflow => "Stack Overflow - try again!",
             _                                => "Time's up!"
         };
     }

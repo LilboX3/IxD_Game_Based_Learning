@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [DefaultExecutionOrder(-10)]
 public class GameManager : MonoBehaviour
@@ -19,7 +21,7 @@ public class GameManager : MonoBehaviour
     [Tooltip("All ingredient names that can appear in the game.")]
     [SerializeField] private string[] allIngredientNames;
 
-    public enum GameState { Idle, Playing, Won, WrongOrder, Lost }
+    public enum GameState { Idle, Playing, Won, WrongOrder, Lost, Overflow }
 
     public GameState State { get; private set; } = GameState.Idle;
     public float TimeRemaining { get; private set; }
@@ -68,6 +70,11 @@ public class GameManager : MonoBehaviour
             TimeRemaining = 0f;
             EndGame(GameState.Lost);
         }
+
+        if (saboteurRat.IsStackOverflow())
+        {
+            EndGame(GameState.Overflow);
+        }
     }
 
     public void StartGame()
@@ -82,7 +89,10 @@ public class GameManager : MonoBehaviour
         OnGameStarted?.Invoke();
     }
 
-    public void RestartGame() => StartGame();
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
 
     private void OnDeliveryStackChanged()
     {

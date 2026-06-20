@@ -17,6 +17,8 @@ public class SaboteurRat : MonoBehaviour
     [Header("Prefab")]
     [SerializeField] private GameObject ingredientPrefab;
 
+    private bool _isStackOverflow = false;
+
 
     public IEnumerator SabotageLoop(string[] allIngredients)
     {
@@ -29,6 +31,11 @@ public class SaboteurRat : MonoBehaviour
         }
     }
 
+    public bool IsStackOverflow()
+    {
+        return _isStackOverflow;
+    }
+
     private void Sabotage(string[] allIngredients)
     {
         IngredientStack targetStack =
@@ -36,10 +43,6 @@ public class SaboteurRat : MonoBehaviour
 
         //Debug.Log($"[SaboteurRat] New stack: {targetStack}");
 
-        if (targetStack.IsFull)
-        {
-            return;
-        }
 
         string ingredient =
             allIngredients[Random.Range(0, allIngredients.Length)];
@@ -57,6 +60,13 @@ public class SaboteurRat : MonoBehaviour
             );
 
             StartCoroutine(HideHintAfterDelay(targetStack));
+        }
+
+        if (targetStack.IsFull)
+        {
+            Debug.Log($"Overflow of stack {targetStack}!");
+            _isStackOverflow = true;
+            return;
         }
     }
 
